@@ -24,7 +24,7 @@ const ffmpeg = full || path.join(rdir, "ffmpeg");
 const env = full ? process.env : { ...process.env, LD_LIBRARY_PATH: rdir };
 const ff = (a) => spawnSync(ffmpeg, a, { stdio: "inherit", env }).status === 0;
 
-const dir = path.resolve("out/die-to-mom");
+const dir = path.resolve("out/die-to-mom-toon");
 fs.mkdirSync(dir, { recursive: true });
 const chromiumOptions = { gl: process.env.GL || "swangle" };
 const t0 = Date.now();

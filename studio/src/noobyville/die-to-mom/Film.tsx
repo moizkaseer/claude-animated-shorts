@@ -31,13 +31,13 @@ export const Film: React.FC = () => {
   }, [handle]);
   const state = direct(frame);
   return (
-    <AbsoluteFill style={{ background: "#3aa0e0" }}>
+    <AbsoluteFill style={{ background: "#8fd0e4" }}>
       {ready && (
         <ThreeCanvas
           width={width}
           height={height}
-          gl={{ antialias: false, toneMapping: THREE.NoToneMapping, outputColorSpace: THREE.SRGBColorSpace }}
-          camera={{ fov: 48, near: 0.08, far: 240, position: [0, 2.4, 7] }}
+          gl={{ antialias: false, toneMapping: THREE.NoToneMapping, outputColorSpace: THREE.SRGBColorSpace, powerPreference: "high-performance" }}
+          camera={{ fov: 42, near: 0.08, far: 120, position: [0, 1.8, 5] }}
         >
           <Scene frame={frame} />
         </ThreeCanvas>
