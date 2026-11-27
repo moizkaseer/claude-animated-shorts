@@ -17,3 +17,11 @@ pipeline and every look rule; read it before working on a short.
   scripts, characters or shots, never name the channel.
 - This machine: Intel iGPU, renders are slow (GPU-bound); `GL=angle` only (egl hangs). Run long renders in the
   background; `scripts/render.mjs` resumes from finished chunks.
+
+## Before calling a short ready to post (Wobbly History)
+- Read `PRE_POST_CHECKLIST.md` (repo root) before writing the script: character-in-trouble hook, a rival, at most 2
+  dates, one twist, a punchline that loops to the hook, no spoken CTA, an MCU opening frame with the paradox banner,
+  60-70 s at ~3.7 words/s, a question title, history-only tags, no music. It overrides SKILL.md's music and script
+  defaults.
+- Final step, always: `node scripts/qa-ready.mjs <name>` from `studio/`. Only say a short is ready to post when it
+  prints READY; otherwise report the FAIL / REVIEW lines and fix them.
