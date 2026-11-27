@@ -10,6 +10,7 @@ Proven on **The Bridge That Fell for a Song**, a 67 s short about the 1831 Broug
 | Path | What it is |
 |---|---|
 | `SKILL.md` | The skill: the full pipeline, every rule, the final look values, gotchas, readability traps |
+| `PRE_POST_CHECKLIST.md` | Wobbly History script / opening / packaging rules, competitor benchmarks, and the `qa-ready` gate |
 | `studio/` | The Remotion project (see below) |
 | `references/STYLE_BIBLE.md` | The script and visual formula measured from 20 reference shorts |
 | `references/reports/` | Seven measured reports: motion, depth, textures, characters, lighting, outlines, grade |
@@ -24,7 +25,7 @@ Proven on **The Bridge That Fell for a Song**, a 67 s short about the 1831 Broug
 | `src/shorts/<name>/` | One folder per short: `story.ts` (timing, cameras, lens), `set.ts`, `cast.ts`, `index.ts` |
 | `audio/engine/`, `audio/shorts/<name>/` | Synth instruments, SFX generators, DSP, the mixer; each short's cues, score and mix settings |
 | `media/<name>/` | Script and voice (`voice/voice.wav`, `voice/words.json`) |
-| `scripts/` | `new-short`, `stills`, `export-timeline`, `render` (resumable, mux, QA), `upload-kit`, `qa.py`, `sbs_sheet.py` |
+| `scripts/` | `new-short`, `stills`, `export-timeline`, `render` (resumable, mux, QA), `upload-kit`, `qa-ready` (ready-to-post gate, see `PRE_POST_CHECKLIST.md`), `qa.py`, `sbs_sheet.py` |
 
 ## Setup
 1. Node 22, Python 3 with numpy, scipy and Pillow, Google Chrome or Remotion's headless shell (downloaded on first render).
@@ -44,6 +45,7 @@ node scripts/export-timeline.mjs <name>                      # picture timing ->
 python3 audio/mix.py <name>                                  # soundtrack -> out/<name>/audio/mix.wav
 node scripts/render.mjs <name>                               # 2K render, mux, QA -> out/<name>/<name>_final.mp4
 node scripts/upload-kit.mjs <name>                           # checks + file + cover frames + UPLOAD.md to paste
+node scripts/qa-ready.mjs <name>                             # ready-to-post gate: only post when it prints READY
 node scripts/stills.mjs HostSheet out/characters/host_ 0 1   # the host's model sheet
 ```
 

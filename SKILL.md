@@ -28,6 +28,9 @@ The style reference is a channel studied privately (`references/`).
 - Never copy their scripts, characters or shots. Story, characters and voice are always OUR OWN.
 - Never say the channel's name in a voice-over or description.
 
+**Wobbly History:** `PRE_POST_CHECKLIST.md` (repo root) overrides these defaults where they conflict (no music,
+the character-in-trouble script template, question titles). Read it before step 1.
+
 House rules (defaults from the original author; the channel owner may change them, ask once):
 - No captions or labels in the video. English only. Voice: one steady tone. Jokes are researched real facts.
 - Standard mix: music +3 dB, SFX -6 dB, voice unchanged.
@@ -101,6 +104,9 @@ House rules (defaults from the original author; the channel owner may change the
     checks the video (9:16, >= 1080x1920, <= 3 min, audio) and writes `out/<name>/upload/` (the MP4, cover frame
     candidates, UPLOAD.md with everything to paste and the settings checklist). The channel owner uploads it in
     YouTube Studio or the app. (API uploads from an unverified Google Cloud app stay private until Google audits it.)
+13. **Ready-to-post gate.** `node scripts/qa-ready.mjs <name>`: script, pace, CTA, dates, loop, music stem, frame-0
+    motion and banner, question title and history-only tags, sources (see `PRE_POST_CHECKLIST.md`). Only call the
+    short ready to post if it prints READY; otherwise fix the FAIL / REVIEW lines and run it again.
 
 ## Final look values (bridge after 4 verifier rounds; the engine defaults)
 Opus-max scores at the end: colour day 7, golden 5-6, lighting 5-6, ink 6, textures 5-6, characters 7, depth 6-7,
